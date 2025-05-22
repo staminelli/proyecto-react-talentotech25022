@@ -1,0 +1,48 @@
+header {
+    width: 100%;
+}
+nav {
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding-left: 5%;
+
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+main {
+    width: 90%;
+    padding: 50px;
+    margin: 0 auto;
+    /* flex-grow: 1; */
+    padding-bottom: 4rem;
+    /* height: 100vh; */
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    padding: 10px;
+    color: black;
+    background-color: #f1f1f1;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4rem;
+}
+
