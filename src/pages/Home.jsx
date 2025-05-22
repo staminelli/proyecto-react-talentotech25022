@@ -20,7 +20,6 @@ function Home({
       <Header
         cartItems={cart}
         eliminarDelCarrito={eliminarDelCarrito}
-        //eliminarDelCarritoTodos={eliminarDelCarritoTodos}
         agregarAlCarrito={agregarAlCarrito}
         setIsCartOpen={setIsCartOpen}
         isCartOpen={isCartOpen}
@@ -38,7 +37,6 @@ function Home({
         ) : (
           <ProductList
             eliminarDelCarrito={eliminarDelCarrito}
-            //eliminarDelCarritoTodos={eliminarDelCarritoTodos}
             agregarAlCarrito={agregarAlCarrito}
             productos={productos}
             setIsCartOpen={setIsCartOpen}

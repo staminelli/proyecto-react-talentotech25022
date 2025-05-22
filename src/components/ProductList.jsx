@@ -9,7 +9,7 @@ const ProductList = ({productos, agregarAlCarrito, setIsCartOpen}) => {
       <h2>Galeria de Productos</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
       <div className="galeria">
-      {productos.map((producto) => (
+      {productos.products.map((producto) => (
         <Products producto={producto} key={producto.id} agregarAlCarrito={agregarAlCarrito} setIsCartOpen={setIsCartOpen}/>
       ))}
       </div>

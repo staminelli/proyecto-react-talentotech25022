@@ -12,7 +12,7 @@ function Header({
 
   //eliminarDelCarritoTodos,
 }) {
-  //const [isCartOpen, setIsCartOpen] = useState(false); Lo agrego en App para usarlo en Home y abrir el carrito al añadir un producto 
+  //const [isCartOpen, setIsCartOpen] = useState(false); //Lo agrego en App para usarlo en Home y abrir el carrito al añadir un producto 
 
   return (
     <header>

@@ -9,7 +9,7 @@ const Products = ({producto, agregarAlCarrito, setIsCartOpen}) => {
       <h3 className="nombre">{producto.title}</h3>
       <div className="card-main">
           <div className="img_container">
-            <img src={producto.image} alt="Product" className="img"/>
+            <img src={producto.thumbnail} alt="Product" className="img"/>
           </div>
           
           <div className="aside">

@@ -2,10 +2,16 @@ import React from "react";
 import Header from "../components/statics/Header";
 import Footer from "../components/statics/Footer";
 
-function GaleriaDeProductos({ cart }) {
+function GaleriaDeProductos({ cart , setIsCartOpen,
+  isCartOpen, }) {
   return (
     <>
-      <Header cartItems={cart} />
+      <Header cartItems={cart}         
+        //eliminarDelCarrito={eliminarDelCarrito}
+        //eliminarDelCarritoTodos={eliminarDelCarritoTodos}
+        //agregarAlCarrito={agregarAlCarrito}
+        setIsCartOpen={setIsCartOpen}
+        isCartOpen={isCartOpen}/>
       <main>
         <h1>Galeria de productos</h1>
         

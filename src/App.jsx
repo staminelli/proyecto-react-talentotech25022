@@ -17,7 +17,9 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://fakestoreapi.com/products");
+        const response = await fetch(
+          "https://dummyjson.com/products/?limit=50"
+        );
         if (!response.ok) {
           throw new Error("Error en la respuesta de la API");
         }
@@ -86,12 +88,42 @@ function App() {
             />
           }
         />
-        <Route path="/acercade" element={<AcercaDe cart={cart} />} />
+        <Route
+          path="/acercade"
+          element={
+            <AcercaDe
+              eliminarDelCarrito={eliminarDelCarrito}
+              agregarAlCarrito={agregarAlCarrito}
+              cart={cart}
+              setIsCartOpen={setIsCartOpen}
+              isCartOpen={isCartOpen}
+            />
+          }
+        />
         <Route
           path="/galeriadeproductos"
-          element={<GaleriaDeProductos cart={cart} />}
+          element={
+            <GaleriaDeProductos
+              eliminarDelCarrito={eliminarDelCarrito}
+              agregarAlCarrito={agregarAlCarrito}
+              cart={cart}
+              setIsCartOpen={setIsCartOpen}
+              isCartOpen={isCartOpen}
+            />
+          }
         />
-        <Route path="/contacto" element={<Contacto cart={cart} />} />
+        <Route
+          path="/contacto"
+          element={
+            <Contacto
+              eliminarDelCarrito={eliminarDelCarrito}
+              agregarAlCarrito={agregarAlCarrito}
+              cart={cart}
+              setIsCartOpen={setIsCartOpen}
+              isCartOpen={isCartOpen}
+            />
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
