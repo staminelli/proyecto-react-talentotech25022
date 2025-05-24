@@ -6,6 +6,10 @@ import AcercaDe from "./pages/AcercaDe";
 import Contacto from "./pages/Contacto";
 import GaleriaDeProductos from "./pages/GaleriaDeProductos";
 import NotFound from "./pages/NotFound";
+import Detalle from "./pages/Detalle";
+import Admin from "./pages/Admin";
+import RutasProtegidas from "./auth/RutasProtegidas";
+import Login from "./pages/Login";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -13,12 +17,14 @@ function App() {
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
-
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [limit, setLimit] = useState(10);
   useEffect(() => {
-    const fetchData = async () => {
+    
+    const fetchData = async (limit) => {
       try {
         const response = await fetch(
-          "https://dummyjson.com/products/?limit=50"
+          `https://dummyjson.com/products/?limit=${limit}`  
         );
         if (!response.ok) {
           throw new Error("Error en la respuesta de la API");
@@ -34,8 +40,9 @@ function App() {
       }
     };
 
-    fetchData();
-  }, []);
+    fetchData(limit);
+  }, [limit]);
+
 
   const agregarAlCarrito = (producto) => {
     const productoExistente = cart.find((item) => item.id === producto.id);
@@ -85,6 +92,7 @@ function App() {
               cart={cart}
               setIsCartOpen={setIsCartOpen}
               isCartOpen={isCartOpen}
+              setLimit={setLimit}
             />
           }
         />
@@ -109,6 +117,9 @@ function App() {
               cart={cart}
               setIsCartOpen={setIsCartOpen}
               isCartOpen={isCartOpen}
+              productos={productos}
+              cargando={cargando}
+              setLimit={setLimit}
             />
           }
         />
@@ -124,6 +135,30 @@ function App() {
             />
           }
         />
+        <Route
+          path="/Detalle/:id"
+          element={
+            <Detalle
+              productos={productos}
+              eliminarDelCarrito={eliminarDelCarrito}
+              agregarAlCarrito={agregarAlCarrito}
+              cart={cart}
+              setIsCartOpen={setIsCartOpen}
+              isCartOpen={isCartOpen}
+            />
+          }
+        />
+
+        <Route
+          path="/admin"
+          element={
+            <RutasProtegidas isAdmin={isAdmin}>
+              <Admin />
+            </RutasProtegidas>
+          }
+        />
+        <Route path="/login" element={<Login />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

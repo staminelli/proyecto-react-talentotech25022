@@ -14,7 +14,10 @@ function Home({
   //eliminarDelCarritoTodos,
   setIsCartOpen,
   isCartOpen,
+  setLimit,
 }) {
+
+  setLimit(10);
   return (
     <>
       <Header

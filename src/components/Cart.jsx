@@ -34,7 +34,7 @@ const Cart = ({
           <div className="cart-header">
             <h2>Carrito de compras</h2>
             <button onClick={onClose} className="close-button">
-              &gt;
+              &#10095;
             </button>
           </div>
           <div className="cart-content">

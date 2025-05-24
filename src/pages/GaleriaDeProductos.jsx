@@ -1,22 +1,43 @@
 import React from "react";
 import Header from "../components/statics/Header";
 import Footer from "../components/statics/Footer";
+import ProductList from "../components/ProductList";
+import loading from "../assets/loading.gif";
 
-function GaleriaDeProductos({ cart , setIsCartOpen,
-  isCartOpen, }) {
+function GaleriaDeProductos({
+  productos,
+  cargando,
+  cart,
+  agregarAlCarrito,
+  eliminarDelCarrito,
+  setIsCartOpen,
+  isCartOpen,
+  setLimit,
+}) {
+
+  setLimit(194);
   return (
     <>
-      <Header cartItems={cart}         
-        //eliminarDelCarrito={eliminarDelCarrito}
+      <Header
+        cartItems={cart}
+        eliminarDelCarrito={eliminarDelCarrito}
         //eliminarDelCarritoTodos={eliminarDelCarritoTodos}
-        //agregarAlCarrito={agregarAlCarrito}
+        agregarAlCarrito={agregarAlCarrito}
         setIsCartOpen={setIsCartOpen}
-        isCartOpen={isCartOpen}/>
+        isCartOpen={isCartOpen}
+      />
       <main>
-        <h1>Galeria de productos</h1>
-        
-        Maiores libero, nulla iusto, dolorem et praesentium officiis nisi qui facere impedit possimus vero debitis repudiandae cumque id, fugit vel nihil consectetur dicta rem quas voluptatibus ut illum. Quasi, nemo.
-        Explicabo quia, ipsam mollitia praesentium numquam obcaecati rerum commodi et consequuntur aspernatur voluptas hic nisi voluptatem, neque culpa nemo. Ex facere recusandae rem, soluta et odit libero rerum at quo!
+                {cargando ? (
+          <img src={loading} />
+        ) : (
+          <ProductList
+            eliminarDelCarrito={eliminarDelCarrito}
+            agregarAlCarrito={agregarAlCarrito}
+            productos={productos}
+            setIsCartOpen={setIsCartOpen}
+            isCartOpen={isCartOpen}
+          />
+        )}
       </main>
       <Footer />
     </>

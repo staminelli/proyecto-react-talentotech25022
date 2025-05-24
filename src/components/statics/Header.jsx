@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Cart from "../Cart";
 import "./statics.css";
@@ -10,7 +9,6 @@ function Header({
   setIsCartOpen,
   isCartOpen
 
-  //eliminarDelCarritoTodos,
 }) {
   //const [isCartOpen, setIsCartOpen] = useState(false); //Lo agrego en App para usarlo en Home y abrir el carrito al añadir un producto 
 
