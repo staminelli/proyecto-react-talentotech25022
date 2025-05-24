@@ -15,7 +15,7 @@ function GaleriaDeProductos({
   setLimit,
 }) {
 
-  setLimit(194);
+  setLimit(0);
   return (
     <>
       <Header

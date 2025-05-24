@@ -1,12 +1,37 @@
-# React + Vite
+# Tienda Online React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una tienda online desarrollada con React y Vite. Permite a los usuarios navegar por una galería de productos, ver detalles, agregar productos al carrito y simular un flujo de autenticación para acceder a rutas protegidas.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Listado y detalle de productos obtenidos desde una API externa.
+- Carrito de compras con suma y resta de cantidades.
+- Navegación entre páginas usando React Router.
+- Rutas protegidas para el área de administración.
+- Diseño responsive y moderno.
+- Código organizado en componentes reutilizables.
 
-## Expanding the ESLint configuration
+## Estructura del Proyecto
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+src/
+├── components/       # Componentes reutilizables
+├── pages/            # Páginas de la aplicación
+├── App.jsx           # Componente principal
+├── main.jsx          # Punto de entrada de la aplicación
+└── styles.css        # Estilos globales
+```
+
+## Instalación y Ejecución
+
+Para instalar y ejecutar el proyecto, sigue estos pasos:
+
+1. Clona el repositorio: `git clone <repositorio-url>`
+2. Navega al directorio del proyecto: `cd nombre-del-proyecto`
+3. Instala las dependencias: `npm install`
+4. Inicia el servidor de desarrollo: `npm run dev`
+5. Abre http://localhost:5173 en tu navegador.
+
+---
+
+Desarrollado para la comisión 25022 - Talento Tech.
