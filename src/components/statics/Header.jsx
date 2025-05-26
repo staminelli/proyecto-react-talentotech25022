@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Cart from "../Cart";
 import "./statics.css";
 
@@ -17,24 +17,24 @@ function Header({
       <nav>
         <ul>
           <li>
-            <Link to="/" className="link">
+            <NavLink to="/" className="link">
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/galeriadeproductos" className="link">
+            <NavLink to="/galeriadeproductos" className="link">
               Galeria de productos
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/acercade" className="link">
+            <NavLink to="/acercade" className="link">
               Acerca de
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/contacto" className="link">
+            <NavLink to="/contacto" className="link">
               Contacto
-            </Link>
+            </NavLink>
           </li>
           <li>
             <button

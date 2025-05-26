@@ -7,6 +7,11 @@ nav {
     color: white;
 }
 
+a.active {
+    color: #646cff;
+    text-shadow: #646cff 0px 0px 5px;
+}
+
 ul {
     list-style: none;
     display: flex;
