@@ -13,9 +13,11 @@ function GaleriaDeProductos({
   setIsCartOpen,
   isCartOpen,
   setLimit,
+
 }) {
 
-  setLimit(0);
+  setLimit(0); //muestra todos los productos disponibles de la API (despues deberia hacer una paginacion)
+  // limit = 100;
   return (
     <>
       <Header
@@ -28,7 +30,7 @@ function GaleriaDeProductos({
       />
       <main>
                 {cargando ? (
-          <img src={loading} />
+          <div className="loading"><img src={loading} /></div>
         ) : (
           <ProductList
             eliminarDelCarrito={eliminarDelCarrito}

@@ -2,7 +2,6 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import Header from '../components/statics/Header'
 import Footer from '../components/statics/Footer'
-import { motion } from 'framer-motion'
 import './Detalle.css'
 
 
@@ -14,6 +13,7 @@ const Detalle = ({cart,
   setIsCartOpen,
   isCartOpen,
   productos,
+  // cargando,
   }) => {
   console.log(productos)
   const { id } = useParams()
