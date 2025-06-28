@@ -73,7 +73,6 @@ const Cart = () => {
                         >
                           <i className="fa-solid fa-trash"></i>
                         </button>
-                        {/* <button onClick={()=>eliminarDelCarritoTodos(item)}><i className="fa-solid fa-trash"></i></button> */}
                       </div>
                     </div>
                   </div>
@@ -90,16 +89,26 @@ const Cart = () => {
               className="total"
               onClick={() => {
                 setIsCartOpen(false);
-                alert("Compra finalizada");
+                alert("Gracias por tu compra!");
+                vaciarCarrito();
               }}
             >
               Finalizar Compra
             </button>
-            <button className="total" onClick={() => {vaciarCarrito}}>Vaciar Carrito</button>
+            <button
+              className="total"
+              onClick={() => {
+                if (!cart.length) {
+                  alert("El carrito ya está vacío.");
+                  return;
+                }
+                confirm("¿Estás seguro de que quieres vaciar el carrito?") && vaciarCarrito();
+              }}
+            >
+              Vaciar Carrito
+            </button>
           </div>
         </div>
-        {/* <button className="total">Finalizar Compra</button>
-        <h3 className="total">Total: ${total.toFixed(2)}</h3> */}
       </div>
     </div>
   );

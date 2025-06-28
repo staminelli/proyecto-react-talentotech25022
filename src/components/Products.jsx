@@ -7,11 +7,8 @@ import { CartContext } from "../context/CartContext";
 
 const Products = ({ producto }) => {
   const {
-    cart,
     agregarAlCarrito,
-    eliminarDelCarrito,
     setIsCartOpen,
-    isCartOpen,
   } = useContext(CartContext);
   return (
     <section className="card">

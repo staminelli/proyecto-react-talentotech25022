@@ -6,19 +6,13 @@ import "./Detalle.css";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
-const Detalle = ({
-  productos,
-}) => {
-  
+const Detalle = ({ productos }) => {
   // console.log(productos);
   const { id } = useParams();
-  const producto = productos.products.find((item) => item.id === parseInt(id));
+  const producto = productos.products.find((item) => item.id == parseInt(id));
   // console.log(producto);
 
-  const {
-    agregarAlCarrito,
-    setIsCartOpen,
-  } = useContext(CartContext);
+  const { agregarAlCarrito, setIsCartOpen } = useContext(CartContext);
 
   return (
     <>
@@ -33,19 +27,20 @@ const Detalle = ({
                 <img key={index} src={image} alt="Product" className="img" />
               </div>
             ))}
+            <div className="aside_detalle">
+              <p><b>Descripcion:</b> {producto.description}</p>
+              <p className="precio">Precio ${producto.price}</p>
+            </div>
+            <button
+              className="btn_detalle"
+              onClick={() => {
+                agregarAlCarrito(producto);
+                setIsCartOpen(true);
+              }}
+            >
+              Añadir al carrito
+            </button>
           </div>
-          <div className="aside">
-            <p>{producto.description}</p>
-            <p className="precio">Precio ${producto.price}</p>
-          </div>
-          <button
-            onClick={() => {
-              agregarAlCarrito(producto);
-              setIsCartOpen(true);
-            }}
-          >
-            Añadir al carrito
-          </button>
         </div>
       </main>
 

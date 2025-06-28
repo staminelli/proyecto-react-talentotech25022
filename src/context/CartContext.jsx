@@ -37,6 +37,7 @@ export const CartProvider = ({ children }) => {
 
   const vaciarCarrito = () => {
     setCart([]);
+    
   };
 
   const onClose = () => setIsCartOpen(false);

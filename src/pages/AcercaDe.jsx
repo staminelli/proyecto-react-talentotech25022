@@ -11,7 +11,8 @@ const AcercaDe = () => {
       <Header
       />
       <main>
-        <h1>Acerca De</h1>
+        <h1>Acerca de esto</h1>
+        <br />
         <p>
           Este es un proyecto de una tienda virtual realizado para el curso de React dictado por Talento Tech - Comision 25022 -
           Profesor: Emiliano Del Arco.

@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -11,15 +11,12 @@ import Admin from "./pages/Admin";
 import RutasProtegidas from "./auth/RutasProtegidas";
 import Login from "./pages/Login";
 
-
 function App() {
-
   const [productos, setProductos] = useState([]);
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [limit, setLimit] = useState(10);
-
 
   useEffect(() => {
     const fetchData = async (limit) => {
@@ -32,7 +29,7 @@ function App() {
         }
         const data = await response.json();
         setProductos(data);
-        console.log(data);
+        // console.log(data);
       } catch (error) {
         console.log("Error fetching data:", error);
         setError(true);
@@ -43,7 +40,6 @@ function App() {
 
     fetchData(limit);
   }, [limit]);
-
 
   return (
     <Router>
@@ -70,7 +66,13 @@ function App() {
           }
         />
         <Route path="/contacto" element={<Contacto />} />
-        <Route path="/Detalle/:id" element={<Detalle />} />
+        <Route
+          path="/Detalle/:id"
+          element={<Detalle 
+            productos={productos} 
+            />
+          }
+        />
 
         <Route
           path="/admin"
