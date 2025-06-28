@@ -1,29 +1,43 @@
 import React from "react";
 import "./Products.css";
 import { Link } from "react-router-dom";
-// import Header from "./statics/Header";  
+// import Header from "./statics/Header";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
-
-const Products = ({producto, agregarAlCarrito, setIsCartOpen}) => {
+const Products = ({ producto }) => {
+  const {
+    cart,
+    agregarAlCarrito,
+    eliminarDelCarrito,
+    setIsCartOpen,
+    isCartOpen,
+  } = useContext(CartContext);
   return (
     <section className="card">
-      <Link to={`/Detalle/${producto.id}`}><h3 className="nombre">{producto.title}</h3>
-      <div className="card-main">
+      <Link to={`/Detalle/${producto.id}`}>
+        <h3 className="nombre">{producto.title}</h3>
+        <div className="card-main">
           <div className="img_container">
-            <img src={producto.thumbnail} alt="Product" className="img"/>
+            <img src={producto.thumbnail} alt="Product" className="img" />
           </div>
-          
+
           <div className="aside">
             <div className="description">
               <p>{producto.description}</p>
             </div>
             <p className="precio">${producto.price}</p>
           </div>
-      </div></Link>
-      <button onClick={()=>{agregarAlCarrito(producto);setIsCartOpen(true)}}>Añadir al carrito</button>
-      
-        
-      
+        </div>
+      </Link>
+      <button
+        onClick={() => {
+          agregarAlCarrito(producto);
+          setIsCartOpen(true);
+        }}
+      >
+        Añadir al carrito
+      </button>
     </section>
   );
 };

@@ -1,16 +1,14 @@
 import { NavLink } from "react-router-dom";
 import Cart from "../Cart";
 import "./statics.css";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
-function Header({
-  cartItems,
-  eliminarDelCarrito,
-  agregarAlCarrito,
-  setIsCartOpen,
-  isCartOpen
-
-}) {
-  //const [isCartOpen, setIsCartOpen] = useState(false); //Lo agrego en App para usarlo en Home y abrir el carrito al añadir un producto 
+function Header() {
+  const {
+    setIsCartOpen,
+    isCartOpen,
+  } = useContext(CartContext);
 
   return (
     <header>
@@ -43,15 +41,7 @@ function Header({
             >
               <i className="fa-solid fa-cart-shopping"></i>
             </button>
-            <Cart
-              cartItems={cartItems}
-              isOpen={isCartOpen}
-              onClose={() => setIsCartOpen(false)}
-              eliminarDelCarrito={eliminarDelCarrito}
-              agregarAlCarrito={agregarAlCarrito}
-              //setIsCartOpen={setIsCartOpen}
-              //eliminarDelCarritoTodos={eliminarDelCarritoTodos}
-            />
+            <Cart />
           </li>
         </ul>
       </nav>

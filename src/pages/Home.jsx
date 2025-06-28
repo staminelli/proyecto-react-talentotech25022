@@ -8,12 +8,6 @@ import loading from "../assets/loading.gif";
 function Home({
   productos,
   cargando,
-  cart,
-  agregarAlCarrito,
-  eliminarDelCarrito,
-  //eliminarDelCarritoTodos,
-  setIsCartOpen,
-  isCartOpen,
   setLimit,
 }) {
 
@@ -21,29 +15,15 @@ function Home({
   return (
     <>
       <Header
-        cartItems={cart}
-        eliminarDelCarrito={eliminarDelCarrito}
-        agregarAlCarrito={agregarAlCarrito}
-        setIsCartOpen={setIsCartOpen}
-        isCartOpen={isCartOpen}
       />
       <main>
-        <h1>Bienvenido a mi tienda</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quos
-          molestiae, quam reprehenderit laboriosam aliquid enim iure est,
-          dolorum necessitatibus tenetur? Neque, beatae animi dolore odit
-          aperiam doloribus numquam repellendus.
-        </p>
+        <h1>React E-commerce</h1>
+
         {cargando ? (
-          <img src={loading} />
+          <div className="loading"><img src={loading} /></div>
         ) : (
           <ProductList
-            eliminarDelCarrito={eliminarDelCarrito}
-            agregarAlCarrito={agregarAlCarrito}
             productos={productos}
-            setIsCartOpen={setIsCartOpen}
-            isCartOpen={isCartOpen}
           />
         )}
       </main>

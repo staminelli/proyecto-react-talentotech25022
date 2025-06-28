@@ -37,7 +37,7 @@
 .cart-content {
   padding: 10px;
   font-size: smaller;
-  padding-bottom: 4rem;
+  padding-bottom: 10rem;
 }
 
 .close-button {
@@ -84,14 +84,33 @@
   align-items: center;
 
 }
+.cart-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
 
 .total {
-position: absolute;
-bottom: 0;
-margin: 20px;
+/* position: absolute; */
+bottom: 50px;
+margin: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+button.total {
+  bottom: 0;
 }
 
 h3 {
 line-height: 1.2;
 
 }
+
