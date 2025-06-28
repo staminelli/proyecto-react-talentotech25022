@@ -1,6 +1,6 @@
 import React from "react";
 import "./Cart.css";
-import { useContext } from "react";
+import { use } from "react";
 import { CartContext } from "../context/CartContext";
 
 const Cart = () => {
@@ -12,7 +12,7 @@ const Cart = () => {
     isCartOpen,
     onClose,
     vaciarCarrito,
-  } = useContext(CartContext);
+  } = use(CartContext);
 
   let total = 0;
 

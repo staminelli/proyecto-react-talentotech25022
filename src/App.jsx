@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -12,68 +12,43 @@ import RutasProtegidas from "./auth/RutasProtegidas";
 import Login from "./pages/Login";
 
 function App() {
-  const [productos, setProductos] = useState([]);
-  const [cargando, setCargando] = useState(true);
-  const [error, setError] = useState(false);
+  // const [productos, setProductos] = useState([]);
+  // const [cargando, setCargando] = useState(true);
+  // const [error, setError] = useState(false);
+  // const [limit, setLimit] = useState(10);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [limit, setLimit] = useState(10);
 
-  useEffect(() => {
-    const fetchData = async (limit) => {
-      try {
-        const response = await fetch(
-          `https://dummyjson.com/products/?limit=${limit}`
-        );
-        if (!response.ok) {
-          throw new Error("Error en la respuesta de la API");
-        }
-        const data = await response.json();
-        setProductos(data);
-        // console.log(data);
-      } catch (error) {
-        console.log("Error fetching data:", error);
-        setError(true);
-      } finally {
-        setCargando(false);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async (limit) => {
+  //     try {
+  //       const response = await fetch(
+  //         `https://dummyjson.com/products/?limit=${limit}`
+  //       );
+  //       if (!response.ok) {
+  //         throw new Error("Error en la respuesta de la API");
+  //       }
+  //       const data = await response.json();
+  //       setProductos(data);
+  //       // console.log(data);
+  //     } catch (error) {
+  //       console.log("Error fetching data:", error);
+  //       setError(true);
+  //     } finally {
+  //       setCargando(false);
+  //     }
+  //   };
 
-    fetchData(limit);
-  }, [limit]);
+  //   fetchData(limit);
+  // }, [limit]);
 
   return (
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              productos={productos}
-              cargando={cargando}
-              setLimit={setLimit}
-            />
-          }
-        />
+        <Route path="/" element={<Home />} />
         <Route path="/acercade" element={<AcercaDe />} />
-        <Route
-          path="/galeriadeproductos"
-          element={
-            <GaleriaDeProductos
-              productos={productos}
-              cargando={cargando}
-              setLimit={setLimit}
-            />
-          }
-        />
+        <Route path="/galeriadeproductos" element={<GaleriaDeProductos />} />
         <Route path="/contacto" element={<Contacto />} />
-        <Route
-          path="/Detalle/:id"
-          element={<Detalle 
-            productos={productos} 
-            />
-          }
-        />
-
+        <Route path="/Detalle/:id" element={<Detalle />} />
         <Route
           path="/admin"
           element={
@@ -83,7 +58,6 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
-
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

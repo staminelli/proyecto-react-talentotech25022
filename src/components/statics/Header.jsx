@@ -1,14 +1,14 @@
 import { NavLink } from "react-router-dom";
 import Cart from "../Cart";
 import "./statics.css";
-import { useContext } from "react";
+import { use } from "react";
 import { CartContext } from "../../context/CartContext";
 
 function Header() {
   const {
     setIsCartOpen,
     isCartOpen,
-  } = useContext(CartContext);
+  } = use(CartContext);
 
   return (
     <header>

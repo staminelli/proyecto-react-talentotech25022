@@ -2,14 +2,14 @@ import React from "react";
 import "./Products.css";
 import { Link } from "react-router-dom";
 // import Header from "./statics/Header";
-import { useContext } from "react";
+import { use } from "react";
 import { CartContext } from "../context/CartContext";
 
 const Products = ({ producto }) => {
   const {
     agregarAlCarrito,
     setIsCartOpen,
-  } = useContext(CartContext);
+  } = use(CartContext);
   return (
     <section className="card">
       <Link to={`/Detalle/${producto.id}`}>
