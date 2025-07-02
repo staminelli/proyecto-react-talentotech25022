@@ -12,34 +12,7 @@ import RutasProtegidas from "./auth/RutasProtegidas";
 import Login from "./pages/Login";
 
 function App() {
-  // const [productos, setProductos] = useState([]);
-  // const [cargando, setCargando] = useState(true);
-  // const [error, setError] = useState(false);
-  // const [limit, setLimit] = useState(10);
   const [isAdmin, setIsAdmin] = useState(false);
-
-  // useEffect(() => {
-  //   const fetchData = async (limit) => {
-  //     try {
-  //       const response = await fetch(
-  //         `https://dummyjson.com/products/?limit=${limit}`
-  //       );
-  //       if (!response.ok) {
-  //         throw new Error("Error en la respuesta de la API");
-  //       }
-  //       const data = await response.json();
-  //       setProductos(data);
-  //       // console.log(data);
-  //     } catch (error) {
-  //       console.log("Error fetching data:", error);
-  //       setError(true);
-  //     } finally {
-  //       setCargando(false);
-  //     }
-  //   };
-
-  //   fetchData(limit);
-  // }, [limit]);
 
   return (
     <Router>

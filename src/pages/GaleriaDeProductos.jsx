@@ -13,8 +13,7 @@ function GaleriaDeProductos() {
     setLimit,
   } = use(ProductsContext);
 
-  setLimit(0);
-   //muestra todos los productos disponibles de la API (despues deberia hacer una paginacion)
+  setLimit(0); //muestra todos los productos disponibles de la API (despues deberia hacer una paginacion)
 
   return (
     <>
