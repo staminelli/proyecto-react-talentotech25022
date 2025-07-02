@@ -6,10 +6,13 @@ import { use } from "react";
 import { CartContext } from "../context/CartContext";
 
 const Products = ({ producto }) => {
+  
   const {
     agregarAlCarrito,
     setIsCartOpen,
   } = use(CartContext);
+  
+  
   return (
     <section className="card">
       <Link to={`/Detalle/${producto.id}`}>

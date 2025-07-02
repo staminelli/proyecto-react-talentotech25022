@@ -8,7 +8,6 @@ import { ProductsContext } from "../context/ProductsContext";
 
 function GaleriaDeProductos() {
   const {
-    productos,
     cargando,
     setLimit,
   } = use(ProductsContext);
@@ -26,7 +25,7 @@ function GaleriaDeProductos() {
         ) : (
           <>
             <h1 className="center">Listado de productos</h1>
-            <ProductList productos={productos} />
+            <ProductList />
           </>
         )}
       </main>

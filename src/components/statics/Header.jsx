@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <header>
-      <nav>
+      <nav className="navbar navbar-expand{-sm|-md|-lg|-xl|-xxl}">
         <ul>
           <li>
             <NavLink to="/" className="link">

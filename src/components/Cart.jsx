@@ -2,6 +2,7 @@ import React from "react";
 import "./Cart.css";
 import { use } from "react";
 import { CartContext } from "../context/CartContext";
+import Swal from "sweetalert2";
 
 const Cart = () => {
   const {
@@ -89,7 +90,13 @@ const Cart = () => {
               className="total"
               onClick={() => {
                 setIsCartOpen(false);
-                alert("Gracias por tu compra!");
+                // alert("Gracias por tu compra!");
+                Swal.fire({
+                  title: "Gracias por tu compra!",
+                  text: "Tu pedido ha sido procesado.",
+                  icon: "success",
+                  confirmButtonText: "Aceptar",
+                });
                 vaciarCarrito();
               }}
             >
@@ -99,7 +106,12 @@ const Cart = () => {
               className="total"
               onClick={() => {
                 if (!cart.length) {
-                  alert("El carrito ya está vacío.");
+                  // alert("El carrito ya está vacío.");
+                  Swal.fire({
+                    title: "El carrito ya está vacío.",
+                    icon: "info",
+                    confirmButtonText: "Aceptar",
+                  });
                   return;
                 }
                 confirm("¿Estás seguro de que quieres vaciar el carrito?") && vaciarCarrito();

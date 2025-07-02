@@ -6,3 +6,15 @@
     gap: 20px;
     padding: 20px;
 }
+
+.icono-busqueda {
+padding-right: 5px;
+padding-top: 5px;
+}
+
+.busqueda_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}

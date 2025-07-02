@@ -9,7 +9,6 @@ import { ProductsContext } from "../context/ProductsContext";
 
 function Home() {
   const {
-    productos,
     cargando,
     setLimit,
   } = use(ProductsContext);
@@ -26,7 +25,7 @@ function Home() {
             <img src={loading} />
           </div>
         ) : (
-          <ProductList productos={productos} />
+          <ProductList/>
         )}
       </main>
       <Footer />

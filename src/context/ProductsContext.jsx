@@ -6,6 +6,8 @@ export const ProductsProvider = ({ children }) => {
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState(false);
   const [limit, setLimit] = useState(12);
+  const [busqueda, setBusqueda] = useState("");
+  let productosFiltrados = []
 
   useEffect(() => {
     const fetchData = async (limit) => {
@@ -30,13 +32,25 @@ export const ProductsProvider = ({ children }) => {
     fetchData(limit);
   }, [limit]);
 
+  // console.log(productos);
+  if (!cargando) {
+    productosFiltrados = productos.products.filter((producto) =>
+      producto?.title.toLowerCase().includes(busqueda.toLowerCase())
+    );
+  }
+
+  // console.log(productosFiltrados)
+
   return (
     <ProductsContext
       value={{
         productos,
         cargando,
         setLimit,
-        error
+        error,
+        productosFiltrados,
+        setBusqueda,
+        busqueda,
       }}
     >
       {children}

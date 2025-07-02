@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -12,7 +11,7 @@ import RutasProtegidas from "./auth/RutasProtegidas";
 import Login from "./pages/Login";
 
 function App() {
-  const [isAdmin, setIsAdmin] = useState(false);
+
 
   return (
     <Router>
@@ -25,7 +24,7 @@ function App() {
         <Route
           path="/admin"
           element={
-            <RutasProtegidas isAdmin={isAdmin}>
+            <RutasProtegidas>
               <Admin />
             </RutasProtegidas>
           }
