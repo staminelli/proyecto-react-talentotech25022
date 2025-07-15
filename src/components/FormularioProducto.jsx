@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 const FormularioProducto = ({ onAgregar }) => {
   const [producto, setProducto] = useState({
-    nombre: "",
-    precio: "",
-    descripcion: "",
-    imagen: "",
+    title: "",
+    price: "",
+    stock: "",
+    thumbnail: "",
   });
   const [errores, setErrores] = useState({});
 
@@ -21,10 +21,10 @@ const FormularioProducto = ({ onAgregar }) => {
     e.preventDefault();
     onAgregar(producto);
     setProducto({
-      nombre: "",
-      precio: "",
-      descripcion: "",
-      imagen: "",
+    title: "",
+    price: "",
+    stock: "",
+    thumbnail: "",
     });
   };
 
@@ -34,14 +34,14 @@ const FormularioProducto = ({ onAgregar }) => {
             <div>
                 <label>Nombre:</label>
                 <input
-                    type="text" name="nombre" value={producto.nombre} onChange={handleChange} required />
-                {errores.nombre && <p style={{ color: 'red' }}>{errores.nombre}</p>}
+                    type="text" name="title" value={producto.title} onChange={handleChange} required />
+                {errores.nombre && <p style={{ color: 'red' }}>{errores.title}</p>}
             </div>
             <div>
                 <label>Precio:</label>
-                <input type="number" name="precio" value={producto.precio} onChange={handleChange} required
+                <input type="number" name="price" value={producto.price} onChange={handleChange} required
                     min="0" />
-                {errores.precio && <p style={{ color: 'red' }}>{errores.precio}</p>}
+                {errores.precio && <p style={{ color: 'red' }}>{errores.price}</p>}
             </div>
 
             <div>
@@ -59,23 +59,23 @@ const FormularioProducto = ({ onAgregar }) => {
                 <label>Imagen URL:</label>
                 <input
                     type="text"
-                    name="imagen"
-                    value={producto.imagen || ''}
+                    name="thumbnail"
+                    value={producto.thumbnail || ''}
                     onChange={handleChange}
                     required
                 />
-                {errores.imagen && <p style={{ color: 'red' }}>{errores.imagen}</p>}
+                {errores.imagen && <p style={{ color: 'red' }}>{errores.thumbnail}</p>}
             </div>
             <div>
                 <label>Categoría:</label>
                 <input
                     type="text"
-                    name="categoria"
-                    value={producto.categoria || ''}
+                    name="category"
+                    value={producto.category || ''}
                     onChange={handleChange}
                     required
                 />
-                {errores.categoria && <p style={{ color: 'red' }}>{errores.categoria}</p>}
+                {errores.category && <p style={{ color: 'red' }}>{errores.category}</p>}
             </div>
 
             <button type="submit">Agregar Producto</button>

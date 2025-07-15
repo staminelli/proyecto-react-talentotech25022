@@ -137,7 +137,7 @@ const Admin = () => {
                                 <br />
                                 <span>{product.title}</span>
                                 <br />
-                                <span>Precio:${product.price}</span>
+                                <span>Precio: ${product.price}</span>
                                 <div>
                                     <button className="editButton" onClick={()=>{
                                         setOpenEditor(true)
