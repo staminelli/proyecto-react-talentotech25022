@@ -41,7 +41,7 @@ function FormularioEdicion({ productoSeleccionado, onActualizar }) {
             <div>
                 <label>Precio: </label>
                 <input
-                    type="number"
+                    type="text"
                     name="price"
                     value={producto.price || ''}
                     onChange={handleChange}

@@ -39,7 +39,7 @@ const FormularioProducto = ({ onAgregar }) => {
             </div>
             <div>
                 <label>Precio:</label>
-                <input type="number" name="price" value={producto.price} onChange={handleChange} required
+                <input type="text" name="price" value={producto.price} onChange={handleChange} required
                     min="0" />
                 {errores.precio && <p style={{ color: 'red' }}>{errores.price}</p>}
             </div>
