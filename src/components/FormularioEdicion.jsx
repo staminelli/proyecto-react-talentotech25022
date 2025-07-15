@@ -41,12 +41,13 @@ function FormularioEdicion({ productoSeleccionado, onActualizar }) {
             <div>
                 <label>Precio: </label>
                 <input
-                    type="text"
+                    type="number"
                     name="price"
                     value={producto.price || ''}
                     onChange={handleChange}
                     required
                     min="0"
+                    step={"0.01"}
                 />
             </div>
             <div>
