@@ -103,3 +103,53 @@ button:focus-visible {
   width: 50px;
   height: 50px;
 }
+
+.list {
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+}
+
+.listItemImage {
+  width: 150px;
+}
+
+.addbutton {
+  background-color: #646cff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  gap: 5px;
+}

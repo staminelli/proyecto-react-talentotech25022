@@ -134,8 +134,10 @@ const Admin = () => {
                                     alt={product.title}
                                     className="listItemImage"
                                 />
+                                <br />
                                 <span>{product.title}</span>
-                                <span>${product.price}</span>
+                                <br />
+                                <span>Precio:${product.price}</span>
                                 <div>
                                     <button className="editButton" onClick={()=>{
                                         setOpenEditor(true)
@@ -149,7 +151,7 @@ const Admin = () => {
                     </ul>
                 </>
             )}
-            <button onClick={()=> setOpen(true)}>Agregar producto nuevo</button>
+            <button className="addbutton" onClick={()=> setOpen(true)}>Agregar producto nuevo</button>
             {open && (<FormularioProducto onAgregar={agregarProducto}/>)}
             {openEditor && (<FormularioEdicion productoSeleccionado={seleccionado} onActualizar={actulizarProducto}/>)}
         </div>

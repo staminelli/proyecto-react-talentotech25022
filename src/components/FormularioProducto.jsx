@@ -29,7 +29,7 @@ const FormularioProducto = ({ onAgregar }) => {
   };
 
     return (
-    <form onSubmit={handleSubmit}>
+    <form className="formulario" onSubmit={handleSubmit}>
             <h2>Agregar Producto</h2>
             <div>
                 <label>Nombre:</label>

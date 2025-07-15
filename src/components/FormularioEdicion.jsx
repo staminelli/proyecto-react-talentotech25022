@@ -13,13 +13,13 @@ function FormularioEdicion({ productoSeleccionado, onActualizar }) {
 
     };
     return (
-        <form onSubmit={(e)=>{
+        <form className='formulario' onSubmit={(e)=>{
             e.preventDefault()
             onActualizar(producto)
         }}>
             <h2>Editar Producto</h2>
             <div>
-                <label>ID:</label>
+                <label>ID: </label>
                 <input
                     type="number"
                     name="id"
@@ -29,7 +29,7 @@ function FormularioEdicion({ productoSeleccionado, onActualizar }) {
                 />
             </div>
             <div>
-                <label>Nombre:</label>
+                <label>Nombre: </label>
                 <input
                     type="text"
                     name="title"
@@ -39,7 +39,7 @@ function FormularioEdicion({ productoSeleccionado, onActualizar }) {
                 />
             </div>
             <div>
-                <label>Precio:</label>
+                <label>Precio: </label>
                 <input
                     type="number"
                     name="price"
@@ -50,7 +50,7 @@ function FormularioEdicion({ productoSeleccionado, onActualizar }) {
                 />
             </div>
             <div>
-                <label>stock:</label>
+                <label>stock: </label>
                 <input
                     type="number"
                     name="stock"
@@ -60,7 +60,7 @@ function FormularioEdicion({ productoSeleccionado, onActualizar }) {
                 />
             </div>
             <div>
-                <label>Imagen URL:</label>
+                <label>Imagen URL: </label>
                 <input
                     type="text"
                     name="thumbnail"
@@ -70,7 +70,7 @@ function FormularioEdicion({ productoSeleccionado, onActualizar }) {
                 />
             </div>
             <div>
-                <label>Categoria:</label>
+                <label>Categoria: </label>
                 <input
                     type="text"
                     name="category"
