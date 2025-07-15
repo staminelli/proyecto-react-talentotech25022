@@ -9,6 +9,7 @@ import Detalle from "./pages/Detalle";
 import Admin from "./pages/Admin";
 import RutasProtegidas from "./auth/RutasProtegidas";
 import Login from "./pages/Login";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
 
